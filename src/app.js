@@ -6,7 +6,7 @@ const JSZip = require('jszip');
   const result = await JSZip.loadAsync(archive);
   result.filter((path, entry) => !entry.dir)
     .forEach(async file => {
-      const contents = await file.async('string');
+      const contents = await file.async('text');
       console.log('Path:\n', file.name, '\nContents:\n', contents, '\n')
     });
 })().catch(error => console.error(error));
