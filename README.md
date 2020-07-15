@@ -1,4 +1,8 @@
-# Example
+# Tabris.js Unzip Example
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/cpetrov/tabris-js-unzip-example)
+
+An example Tabris.js app demonstrating unzipping a file.
 
 ## Run
 
