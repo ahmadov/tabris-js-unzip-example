@@ -1,12 +1,14 @@
-const JSZip = require('jszip');
+const worker = new Worker('script/worker.js');
 
-(async () => {
-  const response = await fetch('https://tabris.com/wp-content/uploads/2020/07/zipfile.zip')
-  const archive = await response.arrayBuffer();
-  const result = await JSZip.loadAsync(archive);
-  result.filter((path, entry) => !entry.dir)
-    .forEach(async file => {
-      const contents = await file.async('text');
-      console.log('Path:\n', file.name, '\nContents:\n', contents, '\n')
-    });
-})().catch(error => console.error(error));
+worker.onmessage = (event) => {
+  event.data.forEach(({path, contents}) => {
+    console.log('Path:\n', path, '\nContents:\n', contents, '\n')
+  });
+  worker.terminate();
+}
+worker.onerror = (error) => {
+  console.error(error);
+  worker.terminate();
+}
+
+worker.postMessage({url: 'https://tabris.com/wp-content/uploads/2020/07/zipfile.zip'});

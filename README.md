@@ -1,8 +1,8 @@
-# Tabris.js Unzip Example
+# Tabris.js Unzip Example (Worker)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/cpetrov/tabris-js-unzip-example)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ahmadov/tabris-js-unzip-example)
 
-An example Tabris.js app demonstrating unzipping a file.
+An example Tabris.js app demonstrating unzipping a file using a background thread ([Worker](https://docs.tabris.com/3.5/w3c-api.html#worker)).
 
 ## Run
 
